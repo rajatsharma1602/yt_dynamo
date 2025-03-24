@@ -1,0 +1,15 @@
+{
+  "name": "yt_dynamo",
+  "version": "1.0.0",
+  "description": "youtube dynamo snippets",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.774.0",
+    "@aws-sdk/lib-dynamodb": "^3.774.0"
+  }
+}
