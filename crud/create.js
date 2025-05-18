@@ -1,17 +1,17 @@
 import { PutItemCommand } from '@aws-sdk/client-dynamodb';
-import { client } from '../dynamo-client.js';
-import { PutCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
+import { client, DDBClient } from '../dynamo-client.js';
+import { PutCommand } from '@aws-sdk/lib-dynamodb';
 
 // priority = "HIGH" | "MED" | "LOW"
 // status = "TODO" | "IN_PROGRESS" | "DONE"
 
 const todo = {
     pk: 'rajat',
-    sk: '1',
-    title: 'my first todo',
+    sk: '3',
+    title: 'my third todo',
     dueDate: new Date().toString(),
     priority: 'LOW',
-    status: 'TODO'
+    status: 'IN_PROGRESS'
 }
 
 async function create() {
@@ -22,7 +22,6 @@ async function create() {
         "ReturnConsumedCapacity": "TOTAL"
     });
 
-    const DDBClient = DynamoDBDocumentClient.from(client);
     const myTodo = await DDBClient.send(inputCommand)
     console.log("todo created", myTodo);
 }
